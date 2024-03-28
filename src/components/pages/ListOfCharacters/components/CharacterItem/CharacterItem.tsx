@@ -1,14 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { ICharacter } from "../../../../../store/slices/characterSlice";
+import { ICharacter } from '../../../../../types/app.interface'
+import { useNavigate } from "react-router-dom";
 
-interface MyComponentProps {
+type CharacterItemProps = {
   character: ICharacter;
 }
 
-const CharacterItem: React.FC<MyComponentProps> = ({ character }) => {
+const CharacterItem: React.FC<CharacterItemProps> = ({ character }) => {
+  const navigate = useNavigate()
+
+  const handleClick = (character: ICharacter) => {
+    console.log(character.name);
+    navigate(`character/${character.id}`)
+  }
+
   return (
-    <Container>
+    <Container onClick={() => handleClick(character)}>
       <TopLine>
         <Avatar src={character.image} alt="Аватар" />
         <InfoContainer>
@@ -26,6 +34,13 @@ const Container = styled.div`
   border: 1px solid #fff;
   border-radius: 12px;
   padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+    color: yellow;
+    border: 1px solid yellow;
+    transform: scale(1.02);
+  }
 `;
 
 const Name = styled.span`

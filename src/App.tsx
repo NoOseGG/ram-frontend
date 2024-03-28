@@ -1,11 +1,12 @@
 import React from 'react';
 import MainPage from './components/pages/MainPage';
 import styled from 'styled-components';
+import AppRouter from './components/router/AppRouter';
 
 function App() {
   return (
     <AppContainer>
-      <MainPage />
+      <AppRouter />
     </AppContainer>
   );
 }

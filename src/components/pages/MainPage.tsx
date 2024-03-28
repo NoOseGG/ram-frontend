@@ -18,12 +18,12 @@ export default MainPage;
 
 const MainPageContainer = styled.div`
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   background-color: black;
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 `;
 
 const TextContainer = styled.div`

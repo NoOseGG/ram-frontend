@@ -1,0 +1,48 @@
+.container {
+  margin-top: 20px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.topContainer {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.title {
+  color: transparent;
+  background-image: linear-gradient(to right, yellow, green 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 150px;
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.textContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
+}
+
+.text {
+  margin-top: 10px;
+  width: 80%;
+  font-size: 20px;
+}
+
+.image {
+  width: 200px;
+  align-self: end;
+}

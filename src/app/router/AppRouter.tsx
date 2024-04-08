@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import MainPage from '../pages/MainPage'
-import CharaterInfo from '../pages/ListOfCharacters/components/CharacterItem/CharaterInfo'
+import FeedPage from '../../pages/FeedPage'
+import CharaterInfo from '../../components/CharacterInfo/CharaterInfo'
 
 const UrlRoutes = {
   HOME: '/',
@@ -15,7 +15,7 @@ const AppRouter: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path={UrlRoutes.HOME} >
-          <Route index element={<MainPage />} />
+          <Route index element={<FeedPage />} />
           <Route path={UrlRoutes.CHARACTER} element={<CharaterInfo />} /> 
         </Route>
       </Routes>

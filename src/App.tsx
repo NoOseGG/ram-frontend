@@ -1,7 +1,7 @@
 import React from 'react';
-import MainPage from './components/pages/MainPage';
+import FeedPage from './pages/FeedPage';
 import styled from 'styled-components';
-import AppRouter from './components/router/AppRouter';
+import AppRouter from './app/router/AppRouter';
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ICharacter } from '../../../../../types/app.interface'
+import { ICharacter } from '../../types/app.interface'
 import { useNavigate } from "react-router-dom";
 
 type CharacterItemProps = {

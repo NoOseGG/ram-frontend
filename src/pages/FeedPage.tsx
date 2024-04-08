@@ -1,19 +1,20 @@
 import React from "react";
-import styled from "styled-components";
 
-import * as S from './FeedPage.styles';
-import rick from '../assets/rick.png';
-import morty from '../assets/morty.png';
+import styles from './FeedPage.module.css';
+
+import { Feed } from "../components/Feed/Feed";
+import { Header } from "../components/Header/Header";
+
+
 
 const FeedPage: React.FC = () => {
+  console.log(JSON.stringify(styles));
+  
   return (
-    <S.FeedPageContainer>
-      <S.TextContainer>
-        <img src={morty} alt="morty" />
-        <S.Title>Rick And Morty</S.Title>
-        <img src={rick} alt="rick" />
-      </S.TextContainer>
-    </S.FeedPageContainer>
+    <div className={styles.container}>
+      <Header/>
+      <Feed />
+    </div>
   );
 };
 

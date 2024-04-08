@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import FeedPage from '../../pages/FeedPage'
-import CharaterInfo from '../../components/CharacterInfo/CharaterInfo'
+import CharaterInfo from '../../components/Feed/CharacterInfo/CharaterInfo'
 
 const UrlRoutes = {
   HOME: '/',

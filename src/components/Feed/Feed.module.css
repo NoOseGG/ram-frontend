@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    align-items: end;
+}
+
+.title {
+    color: transparent;
+    background-image: linear-gradient(to right, yellow, green 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 150px;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}

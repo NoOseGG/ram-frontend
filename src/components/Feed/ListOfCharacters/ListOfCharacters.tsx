@@ -41,14 +41,14 @@ const ListOfCharacters: React.FC = () => {
           ))}
         </select>
       </div>
-      <div className={styles['characters-container']}>
+      <div className={styles.charactersContainer}>
         {data && data.data.results.map(character => (
           <CharacterItem character={character} key={character.id} />
         ))}
       </div>
-      <div className={styles['buttons-container']}>
-        {data?.data.info.prev && <button className={styles['button-navigate']} onClick={handleClickPreviousButton}>Предыдущая страница</button>}
-        {data?.data.info.next && <button className={styles['button-navigate']} onClick={handleClickNextButton}>Следующая страница</button>}
+      <div className={styles.buttonsContainer}>
+        {data?.data.info.prev ? <button className={styles.buttonNavigate} onClick={handleClickPreviousButton}>Предыдущая страница</button> : <div></div>}
+        {data?.data.info.next && <button className={styles.buttonNavigate} onClick={handleClickNextButton}>Следующая страница</button>}
       </div>
     </div>
   );

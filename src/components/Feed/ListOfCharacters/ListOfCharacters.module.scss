@@ -8,29 +8,28 @@
   gap: 20px;
 }
 
-.characters-container {
+.charactersContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
 }
 
-.buttons-container {
+.buttonsContainer {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.button-navigate {
+.buttonNavigate {
   border: 1px solid #fff;
   font-size: 20px;
   border-radius: 18px;
   color: white;
   background-color: #000;
-  margin-bottom: 50px;
-  padding: 30px;
+  padding: 15px 10px;
 }
 
-.button-navigate:hover {
+.buttonNavigate:hover {
   cursor: pointer;
   color: yellow;
   border: 1px solid yellow;

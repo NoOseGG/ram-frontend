@@ -9,11 +9,9 @@ const FeedPage: React.FC = () => {
   console.log(JSON.stringify(styles));
 
   return (
-    <div className={styles.container}>
-      <div className={styles.containerInner}>
-        <Feed />
-      </div>
-    </div>
+    <>
+      <Feed />
+    </>
   );
 };
 

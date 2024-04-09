@@ -1,8 +1,11 @@
 .container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .innerContainer {
     width: 1280px;
     margin: 0 auto;
+    flex-grow: 1;
 }

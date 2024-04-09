@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    &:hover {
+        color: red;
+    }
+}
+
+.avatar {
+    width: 220px;
+    border-radius: 12px;
+}
+
+.textContainer {
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.text {
+    font-size: 14px;
+}

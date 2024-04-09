@@ -16,12 +16,12 @@ const Footer: React.FC = () => {
           </a>
         </li>
         <li className={styles.menuItem}>
-          <a href="https://vk.com/noosegg" target="_blank">
+          <a href="https://github.com/NoOseGG" target="_blank">
             <img className="styles.icon" src={githubIcon} alt="github-icon" />
           </a>
         </li>
         <li className={styles.menuItem}>
-          <a href="https://vk.com/noosegg" target="_blank">
+          <a href="https://www.linkedin.com/in/yury-svirydzenka-30a03519a/" target="_blank">
             <img
               className="styles.icon"
               src={linkedInIcon}

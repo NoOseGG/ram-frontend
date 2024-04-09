@@ -32,6 +32,7 @@
   list-style-type: none;
   cursor: pointer;
   border: 0px solid yellow;
+  user-select: none;
 
   &:hover {
     color: yellow;

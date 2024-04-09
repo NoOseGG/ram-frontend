@@ -1,19 +1,16 @@
-import React from 'react';
-import FeedPage from './pages/FeedPage';
-import styled from 'styled-components';
-import AppRouter from './app/router/AppRouter';
+import React from "react";
+
+import styles from "./App.module.scss";
+
+import FeedPage from "./pages/FeedPage";
+import AppRouter from "./app/router/AppRouter";
 
 function App() {
   return (
-    <AppContainer>
+    <div className={styles.container}>
       <AppRouter />
-    </AppContainer>
+    </div>
   );
 }
 
 export default App;
-
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`

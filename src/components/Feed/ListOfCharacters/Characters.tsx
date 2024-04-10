@@ -40,10 +40,12 @@ const ListOfCharacters: React.FC = () => {
   };
 
   const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setPage(1);
     setQuery(event.target.value);
   };
 
   const handleChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+    setPage(1);
     setGender(event.target.value);
   };
 

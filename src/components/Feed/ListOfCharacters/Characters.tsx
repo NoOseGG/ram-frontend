@@ -2,10 +2,11 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
-import styles from "./ListOfCharacters.module.scss";
+import styles from "./Characters.module.scss";
 
 import CharacterItem from "../CharacterItem/CharacterItem";
 import { ICharactersResponse } from "../../../types/app.interface";
+import sessionStorageService from "../../../services/sessionStorage.service";
 
 const getCharacters = async (page: number, name: string, gender: string) => {
   return axios.get<ICharactersResponse>(
@@ -14,6 +15,7 @@ const getCharacters = async (page: number, name: string, gender: string) => {
 };
 
 const ListOfCharacters: React.FC = () => {
+  const [isShowMore, setIsShowMore] = useState(sessionStorageService.getItem())
   const [gender, setGender] = useState("");
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
@@ -64,32 +66,18 @@ const ListOfCharacters: React.FC = () => {
           ))}
         </select>
       </div>
-      <div className={styles.charactersContainer}>
-        {data &&
-          data.data.results.map((character) => (
-            <CharacterItem character={character} key={character.id} />
-          ))}
-      </div>
-      <div className={styles.buttonsContainer}>
-        {data?.data.info.prev ? (
-          <button
-            className={styles.buttonNavigate}
-            onClick={handleClickPreviousButton}
-          >
-            Предыдущая страница
-          </button>
-        ) : (
-          <div></div>
-        )}
-        {data?.data.info.next && (
-          <button
-            className={styles.buttonNavigate}
-            onClick={handleClickNextButton}
-          >
-            Следующая страница
-          </button>
-        )}
-      </div>
+      {isShowMore ? (
+        <>
+          <div className={styles.charactersContainer}>
+            {data &&
+              data.data.results.map((character) => (
+                <CharacterItem character={character} key={character.id} />
+              ))}
+          </div>
+        </>
+      ) : (
+        <div>Hello</div>
+      )}
     </div>
   );
 };

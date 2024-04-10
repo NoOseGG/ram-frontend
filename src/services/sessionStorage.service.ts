@@ -4,15 +4,15 @@ const CHARACTER_NAME = 'CHARACTER_NAME'
 
 class sessionStorageService {
     getItem() {
-        sessionStorage.getItem(CHARACTER_NAME);
-    }
+        return sessionStorage.getItem(CHARACTER_NAME);
+    } 
 
     setItem() {
-        sessionStorage.setItem(CHARACTER_NAME, 'true');
+        return sessionStorage.setItem(CHARACTER_NAME, 'true');
     }
 
     removeItem() {
-        sessionStorage.removeItem(CHARACTER_NAME);
+        return sessionStorage.removeItem(CHARACTER_NAME);
     }
 }
 

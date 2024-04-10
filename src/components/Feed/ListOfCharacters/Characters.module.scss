@@ -1,6 +1,6 @@
 .container {
   margin-top: 100px;
-  width: auto;
+  width: 100%;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
 .charactersContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-gap: 30px;
 }
 
 .buttonsContainer {
@@ -22,12 +22,13 @@
 }
 
 .buttonNavigate {
+  width: 200px;
   border: 1px solid #fff;
   font-size: 20px;
-  border-radius: 18px;
+  border-radius: 8px;
   color: white;
   background-color: #000;
-  padding: 15px 10px;
+  padding: 10px 10px;
 }
 
 .buttonNavigate:hover {
@@ -63,5 +64,16 @@
 }
 
 .buttonShowMore {
-  
+  width: 150px;
+  padding: 10px 10px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid yellow;
+    color: yellow;
+  }
 }

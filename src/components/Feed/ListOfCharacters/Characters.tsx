@@ -7,6 +7,7 @@ import styles from "./Characters.module.scss";
 import CharacterItem from "../CharacterItem/CharacterItem";
 import { ICharactersResponse } from "../../../types/app.interface";
 import sessionStorageService from "../../../services/sessionStorage.service";
+import { log } from "console";
 
 const getCharacters = async (page: number, name: string, gender: string) => {
   return axios.get<ICharactersResponse>(
@@ -15,7 +16,7 @@ const getCharacters = async (page: number, name: string, gender: string) => {
 };
 
 const ListOfCharacters: React.FC = () => {
-  const [isShowMore, setIsShowMore] = useState(sessionStorageService.getItem())
+  const [isShowMore, setIsShowMore] = useState(sessionStorageService.getItem());
   const [gender, setGender] = useState("");
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
@@ -25,6 +26,10 @@ const ListOfCharacters: React.FC = () => {
   });
 
   const options = ["Male", "Female", "Genderless ", "Unknown"];
+
+  useEffect(() => {
+    console.log(`${query} ${gender} ${page}`);
+  }, [query, gender, page]);
 
   const handleClickNextButton = () => {
     setPage((prev) => prev + 1);
@@ -40,6 +45,16 @@ const ListOfCharacters: React.FC = () => {
 
   const handleChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
     setGender(event.target.value);
+  };
+
+  const handleClickShowMore = () => {
+    sessionStorageService.setItem();
+    setIsShowMore("true");
+  };
+
+  const handleClickHideMore = () => {
+    sessionStorageService.removeItem();
+    setIsShowMore(null);
   };
 
   useEffect(() => {
@@ -74,9 +89,49 @@ const ListOfCharacters: React.FC = () => {
                 <CharacterItem character={character} key={character.id} />
               ))}
           </div>
+          <div className={styles.buttonsContainer}>
+            {data?.data.info.prev ? (
+              <button
+                className={styles.buttonNavigate}
+                onClick={handleClickPreviousButton}
+              >
+                Previous page
+              </button>
+            ) : (
+              <div style={{ width: 200 }}></div>
+            )}
+            <button
+              className={styles.buttonShowMore}
+              onClick={handleClickHideMore}
+            >
+              Hide more
+            </button>
+            {data?.data.info.next ? (
+              <button
+                className={styles.buttonNavigate}
+                onClick={handleClickNextButton}
+              >
+                Next page
+              </button>
+            ) : (
+              <div style={{ width: 200 }}></div>
+            )}
+          </div>
         </>
       ) : (
-        <div>Hello</div>
+        <>
+          <div className={styles.charactersContainer}>
+            {data?.data.results.slice(0, 4).map((character, index) => (
+              <CharacterItem character={character} key={character.id} />
+            ))}
+          </div>
+          <button
+            className={styles.buttonShowMore}
+            onClick={handleClickShowMore}
+          >
+            Show more
+          </button>
+        </>
       )}
     </div>
   );

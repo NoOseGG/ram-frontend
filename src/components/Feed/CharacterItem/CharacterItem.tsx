@@ -34,11 +34,11 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character }) => {
     <div className={styles.container} onClick={() => handleClick(character)}>
       <img className={styles.avatar} src={character.image} alt="Аватар" />
       <div className={styles.textContainer}>
-        <span className={styles.text}>{character.name}</span>
-        <div style={{ display: "flex", alignItems: 'center', gap: 5 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
           <AliveBudge backgroundColor={getAliveColor(character.status)} />
-          <span className={styles.text}>{character.gender}</span>
+          <span className={styles.title}>{character.name}</span>
         </div>
+        <span className={styles.text}>{character.gender}</span>
       </div>
     </div>
   );

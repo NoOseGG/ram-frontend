@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import FeedPage from "../../pages/FeedPage";
 import { Header } from "../../components/Header/Header";
-import CharaterInfo from "../../components/Feed/CharacterInfo/CharaterInfo";
+import CharaterInfo from "../../components/CharacterInfo/CharaterInfo";
 import { Landing } from "../../landing/Landing";
 
 const UrlRoutes = {

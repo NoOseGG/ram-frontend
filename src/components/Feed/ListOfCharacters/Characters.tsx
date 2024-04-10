@@ -4,8 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 
 import styles from "./Characters.module.scss";
 
-import CharacterItem from "../CharacterItem/CharacterItem";
-import { ICharactersResponse } from "../../../types/app.interface";
+import CharacterItem from "./CharacterItem/CharacterItem";
+import { ICharactersResponse } from "../../../interfaces/app.interface";
 import sessionStorageService from "../../../services/sessionStorage.service";
 import { log } from "console";
 

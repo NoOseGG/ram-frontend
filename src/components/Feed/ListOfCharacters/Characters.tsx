@@ -8,6 +8,7 @@ import CharacterItem from "./CharacterItem/CharacterItem";
 import { ICharactersResponse } from "../../../interfaces/app.interface";
 import sessionStorageService from "../../../services/sessionStorage.service";
 import { log } from "console";
+import ButtonNavigate from "../ButtonsNavigate/ButtonNavigate";
 
 const getCharacters = async (page: number, name: string, gender: string) => {
   return axios.get<ICharactersResponse>(
@@ -91,34 +92,13 @@ const ListOfCharacters: React.FC = () => {
                 <CharacterItem character={character} key={character.id} />
               ))}
           </div>
-          {/* <div className={styles.buttonsContainer}>
-            {data?.data.info.prev ? (
-              <button
-                className={styles.buttonNavigate}
-                onClick={handleClickPreviousButton}
-              >
-                Previous page
-              </button>
-            ) : (
-              <div style={{ width: 200 }}></div>
-            )}
-            <button
-              className={styles.buttonShowMore}
-              onClick={handleClickHideMore}
-            >
-              Hide more
-            </button>
-            {data?.data.info.next ? (
-              <button
-                className={styles.buttonNavigate}
-                onClick={handleClickNextButton}
-              >
-                Next page
-              </button>
-            ) : (
-              <div style={{ width: 200 }}></div>
-            )}
-          </div> */}
+          <ButtonNavigate
+            isPrev={data?.data.info.prev}
+            isNext={data?.data.info.next}
+            handleClickPreviousButton={handleClickPreviousButton}
+            handleClickNextButton={handleClickNextButton}
+            handleClickMoreButton={handleClickHideMore}
+          />
         </>
       ) : (
         <>

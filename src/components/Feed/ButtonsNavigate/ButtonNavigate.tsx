@@ -3,11 +3,11 @@ import React from "react";
 import styles from "./ButtonsNavigate.module.scss";
 
 type Props = {
-  isPrev: string | null;
-  isNext: string | null;
-  handleClickPreviousButton: () => number;
-  handleClickNextButton: () => number;
-  handleClickMoreButton: () => number;
+  isPrev: string | null | undefined;
+  isNext: string | null | undefined;
+  handleClickPreviousButton: () => void;
+  handleClickNextButton: () => void;
+  handleClickMoreButton: () => void;
 };
 
 const ButtonNavigate: React.FC<Props> = ({
@@ -18,7 +18,7 @@ const ButtonNavigate: React.FC<Props> = ({
   handleClickMoreButton,
 }) => {
   return (
-    <div className={styles.buttonsContainer}>
+    <div className={styles.container}>
       {isPrev ? (
         <button
           className={styles.buttonNavigate}

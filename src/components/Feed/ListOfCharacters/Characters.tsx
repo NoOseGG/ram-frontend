@@ -91,7 +91,7 @@ const ListOfCharacters: React.FC = () => {
                 <CharacterItem character={character} key={character.id} />
               ))}
           </div>
-          <div className={styles.buttonsContainer}>
+          {/* <div className={styles.buttonsContainer}>
             {data?.data.info.prev ? (
               <button
                 className={styles.buttonNavigate}
@@ -118,7 +118,7 @@ const ListOfCharacters: React.FC = () => {
             ) : (
               <div style={{ width: 200 }}></div>
             )}
-          </div>
+          </div> */}
         </>
       ) : (
         <>

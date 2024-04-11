@@ -1,7 +1,7 @@
 import React, { Children } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import FeedPage from "../../pages/FeedPage";
+import FeedPage from "../../pages/FeedPage/FeedPage";
 import { Header } from "../../components/Header/Header";
 import CharaterInfo from "../../components/CharacterInfo/CharaterInfo";
 import { Landing } from "../../landing/Landing";

@@ -1,5 +1,7 @@
 // Characters
 
+import exp from "constants";
+
 export interface ICharactersResponse {
     info: {
         count: number;
@@ -53,6 +55,23 @@ export interface ILocation {
     type: string;
     dimension: string;   
     residents: string[];
+    url: string;
+    created: string;
+}
+
+// Character Info
+
+export interface ICharacterInfo {
+    id: number;
+    name: string;
+    status: string;
+    species: string;
+    type: string;
+    gender: string;
+    origin: IOriginForCharacter;
+    location: ILocationForCharacter;
+    image: string;
+    episode: string[];
     url: string;
     created: string;
 }

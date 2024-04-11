@@ -28,10 +28,6 @@ const ListOfCharacters: React.FC = () => {
 
   const options = ["Male", "Female", "Genderless ", "Unknown"];
 
-  useEffect(() => {
-    console.log(`${query} ${gender} ${page}`);
-  }, [query, gender, page]);
-
   const handleClickNextButton = () => {
     setPage((prev) => prev + 1);
   };
@@ -59,11 +55,6 @@ const ListOfCharacters: React.FC = () => {
     sessionStorageService.removeItem();
     setIsShowMore(null);
   };
-
-  useEffect(() => {
-    console.log(data?.data.info.next);
-    console.log(data?.data.info.prev);
-  }, [data]);
 
   return (
     <div className={styles.container}>

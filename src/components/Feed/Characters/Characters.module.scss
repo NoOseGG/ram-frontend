@@ -23,7 +23,7 @@
 
 .search {
   height: 30px;
-  width: 60%;
+  width: 300px;
   border-radius: 12px;
   background-color: #fff;
   color: #000;
@@ -35,8 +35,13 @@
   }
 }
 
+.selectContainer {
+  display: flex;
+  gap: 10px;
+}
+
 .select {
-  width: 20%;
+  width: 200px;
   border-radius: 12px;
   background-color: #fff;
   color: #000;

@@ -10,23 +10,30 @@ import sessionStorageService from "../../../services/sessionStorage.service";
 import { log } from "console";
 import ButtonNavigate from "../ButtonsNavigate/ButtonNavigate";
 
-const getCharacters = async (page: number, name: string, gender: string) => {
+const getCharacters = async (
+  page: number,
+  name: string,
+  gender: string,
+  status: string
+) => {
   return axios.get<ICharactersResponse>(
-    `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&gender=${gender}`
+    `https://rickandmortyapi.com/api/character/?page=${page}&name=${name}&gender=${gender}&status=${status}`
   );
 };
 
 const ListOfCharacters: React.FC = () => {
   const [isShowMore, setIsShowMore] = useState(sessionStorageService.getItem());
   const [gender, setGender] = useState("");
+  const [status, setStatus] = useState("");
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const { data, isLoading } = useQuery({
-    queryKey: ["characters", page, query, gender],
-    queryFn: () => getCharacters(page, query, gender),
+    queryKey: ["characters", page, query, gender, status],
+    queryFn: () => getCharacters(page, query, gender, status),
   });
 
-  const options = ["Male", "Female", "Genderless ", "Unknown"];
+  const statuses = ["Alive", "Dead", "Unknown"];
+  const genders = ["Male", "Female", "Genderless ", "Unknown"];
 
   const handleClickNextButton = () => {
     setPage((prev) => prev + 1);
@@ -41,9 +48,14 @@ const ListOfCharacters: React.FC = () => {
     setQuery(event.target.value);
   };
 
-  const handleChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeSelectGender = (event: ChangeEvent<HTMLSelectElement>) => {
     setPage(1);
     setGender(event.target.value);
+  };
+
+  const handleChangeSelectStatus = (event: ChangeEvent<HTMLSelectElement>) => {
+    setPage(1);
+    setStatus(event.target.value);
   };
 
   const handleClickShowMore = () => {
@@ -64,16 +76,28 @@ const ListOfCharacters: React.FC = () => {
           placeholder="Enter name"
           onChange={handleChangeSearch}
         />
-        <select
-          className={styles.select}
-          onChange={handleChangeSelect}
-          aria-placeholder="Choose gender"
-        >
-          <option value={""}>All genders</option>
-          {options.map((item) => (
-            <option value={item.toLowerCase()}>{item}</option>
-          ))}
-        </select>
+        <div className={styles.selectContainer}>
+          <select
+            className={styles.select}
+            onChange={handleChangeSelectStatus}
+            aria-placeholder="Choose gender"
+          >
+            <option value={""}>All statuses</option>
+            {statuses.map((item) => (
+              <option value={item}>{item}</option>
+            ))}
+          </select>
+          <select
+            className={styles.select}
+            onChange={handleChangeSelectGender}
+            aria-placeholder="Choose gender"
+          >
+            <option value={""}>All genders</option>
+            {genders.map((item) => (
+              <option value={item.toLowerCase()}>{item}</option>
+            ))}
+          </select>
+        </div>
       </div>
       {isShowMore ? (
         <>

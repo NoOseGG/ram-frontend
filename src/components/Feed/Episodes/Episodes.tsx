@@ -35,8 +35,6 @@ const Episodes: React.FC<Props> = ({ episodes }) => {
     },
   });
 
-  console.log(episodes);
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>Episodes</div>

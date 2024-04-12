@@ -38,7 +38,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character }) => {
           <AliveBudge backgroundColor={getAliveColor(character.status)} />
           <span className={styles.title}>{character.name}</span>
         </div>
-        <span className={styles.text}>{character.gender}</span>
+        <span className={styles.text}>{character.species}</span>
       </div>
     </div>
   );

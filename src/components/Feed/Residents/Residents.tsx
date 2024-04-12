@@ -31,7 +31,7 @@ const Residents: React.FC<Props> = ({ residents }) => {
       <div className={styles.title}>Residents</div>
       <div className={styles.residentsContainer}>
         {data?.map((resident) => (
-          <CharacterItem character={resident} />
+          <CharacterItem character={resident} key={resident.id}/>
         ))}
       </div>
     </div>

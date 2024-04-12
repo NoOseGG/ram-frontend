@@ -84,7 +84,7 @@ const ListOfCharacters: React.FC = () => {
           >
             <option value={""}>All statuses</option>
             {statuses.map((item) => (
-              <option value={item}>{item}</option>
+              <option value={item} key={item}>{item}</option>
             ))}
           </select>
           <select
@@ -94,7 +94,7 @@ const ListOfCharacters: React.FC = () => {
           >
             <option value={""}>All genders</option>
             {genders.map((item) => (
-              <option value={item.toLowerCase()}>{item}</option>
+              <option value={item.toLowerCase()} key={item}>{item}</option>
             ))}
           </select>
         </div>

@@ -15,8 +15,10 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character }) => {
   const navigate = useNavigate();
 
   const handleClick = (character: ICharacter) => {
-    console.log(character.name);
-    navigate(`character/${character.id}`);
+    const path = `/character/${character.id}`;
+    console.log(path);
+    
+    navigate(path, { replace: false });
   };
 
   const getAliveColor = (status: string): string => {

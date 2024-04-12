@@ -5,7 +5,7 @@ import axios from "axios";
 
 import styles from "./CharacterInfo.module.scss";
 
-import { ICharacterInfo, IEpisode } from "../../interfaces/app.interface";
+import { ICharacterInfo } from "../../interfaces/app.interface";
 import { Episodes } from "../Feed/Episodes/Episodes";
 
 const getCharacterInfo = (id: string | undefined) => {

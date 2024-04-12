@@ -5,10 +5,12 @@ import FeedPage from "../../pages/FeedPage/FeedPage";
 import { Header } from "../../components/Header/Header";
 import CharaterInfo from "../../components/CharacterInfo/CharaterInfo";
 import { Landing } from "../../landing/Landing";
+import { LocationInfo } from "../../components/LocationInfo/LocationInfo";
 
 const UrlRoutes = {
   HOME: "/",
   CHARACTER: "character/:id",
+  LOCATION: "location/:id",
 };
 
 const AppRouter: React.FC = () => {
@@ -24,6 +26,10 @@ const AppRouter: React.FC = () => {
           <Route
             path={UrlRoutes.CHARACTER}
             element={landing(<CharaterInfo />)}
+          />
+          <Route
+            path={UrlRoutes.LOCATION}
+            element={landing(<LocationInfo />)}
           />
         </Route>
       </Routes>

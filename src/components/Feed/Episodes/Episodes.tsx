@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IEpisodesResponse } from '../../../interfaces/app.interface';
 import axios from 'axios';
 

@@ -13,7 +13,7 @@ const Landing: React.FC<Props> = ({ children }) => {
   return (
     <div className={styles.container}>
       <Header />
-      <div className={styles.innerContainer}>{children}</div>
+      <main className={styles.innerContainer}>{children}</main>
       <Footer />
     </div>
   );

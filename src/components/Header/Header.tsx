@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <div className={styles.innerContainer}>
         <img
           src={logo}
@@ -23,13 +23,12 @@ const Header: React.FC = () => {
         />
         <nav>
           <ul className={styles.menu}>
-            <li className={styles.menuItem}>Гланая</li>
-            <li className={styles.menuItem}>Поиск</li>
-            <li className={styles.menuItem}>О Нас</li>
+            <li className={styles.menuItem}>Characters</li>
+            <li className={styles.menuItem}>Locations</li>
           </ul>
         </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

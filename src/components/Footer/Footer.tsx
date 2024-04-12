@@ -8,7 +8,7 @@ import linkedInIcon from "../../assets/icons/linkenin-icon.svg";
 
 const Footer: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <footer className={styles.container}>
       <ul className={styles.menu}>
         <li className={styles.menuItem}>
           <a href="https://vk.com/noosegg" target="_blank">
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </footer>
   );
 };
 

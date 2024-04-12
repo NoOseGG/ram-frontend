@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 import styles from "./CharacterInfo.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { ICharacterInfo } from "../../interfaces/app.interface";
+import { ICharacterInfo, IEpisode } from "../../interfaces/app.interface";
+import { EpisodeItem } from "../Feed/Episodes/EpisodeItem/EpisodeItem";
+import { log } from "console";
 
 const getCharacterInfo = (id: string | undefined) => {
   if (id) return axios.get<ICharacterInfo>(`https://rickandmortyapi.com/api/character/${id}`)
@@ -16,6 +18,11 @@ const CharaterInfo: React.FC = () => {
     queryKey: ['characterInfo', id],
     queryFn: () => getCharacterInfo(id),
   })
+
+  console.log(JSON.stringify(data?.data));
+
+  const dataEpisodes = data?.data.episode.map(item => item.split('/').pop())
+  console.log(JSON.stringify(dataEpisodes?.join(',')));
 
   return <div className={styles.container}>
     <div className={styles.topInfo}>
@@ -29,7 +36,9 @@ const CharaterInfo: React.FC = () => {
       </div>
       <img className={styles.avatar} src={data?.data.image} />
     </div>
-
+    <div>
+      
+    </div>
   </div>;
 };
 

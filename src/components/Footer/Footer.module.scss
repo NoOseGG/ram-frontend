@@ -13,9 +13,12 @@
 
 .innerContainer {
   width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
   text-align: center;
-  font-size: 34px;
+  font-size: 24px;
   padding: 12px;
 }
 
@@ -39,9 +42,11 @@
   }
 }
 
-.menuLink {
+.text {
+  width: 200px;
 }
 
-.logo {
-  
+.link {
+  color: #fff;
+  text-decoration: underline;
 }

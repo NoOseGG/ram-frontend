@@ -1,0 +1,10 @@
+.select {
+  width: 200px;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #000;
+
+  &::after:focus {
+    outline: none;
+  }
+}

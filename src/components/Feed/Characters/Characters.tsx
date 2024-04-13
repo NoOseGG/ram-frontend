@@ -9,6 +9,7 @@ import { ICharactersResponse } from "../../../interfaces/app.interface";
 import sessionStorageService from "../../../services/sessionStorage.service";
 import { log } from "console";
 import ButtonNavigate from "../ButtonsNavigate/ButtonNavigate";
+import { Select } from "./Filters/Select/Select";
 
 const getCharacters = async (
   page: number,
@@ -77,26 +78,14 @@ const ListOfCharacters: React.FC = () => {
           onChange={handleChangeSearch}
         />
         <div className={styles.selectContainer}>
-          <select
-            className={styles.select}
-            onChange={handleChangeSelectStatus}
-            aria-placeholder="Choose gender"
-          >
-            <option value={""}>All statuses</option>
-            {statuses.map((item) => (
-              <option value={item} key={item}>{item}</option>
-            ))}
-          </select>
-          <select
-            className={styles.select}
-            onChange={handleChangeSelectGender}
-            aria-placeholder="Choose gender"
-          >
-            <option value={""}>All genders</option>
-            {genders.map((item) => (
-              <option value={item.toLowerCase()} key={item}>{item}</option>
-            ))}
-          </select>
+          <Select
+            options={statuses}
+            handleChangeSelect={handleChangeSelectStatus}
+          />
+          <Select
+            options={genders}
+            handleChangeSelect={handleChangeSelectGender}
+          />
         </div>
       </div>
       {isShowMore ? (

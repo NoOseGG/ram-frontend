@@ -14,8 +14,8 @@ const Select: React.FC<Props> = ({ options, handleChangeSelect }) => {
       onChange={handleChangeSelect}
       aria-placeholder="Choose gender"
     >
-      <option value={""}>All statuses</option>
-      {options.map((item) => (
+      <option value={""}>{options[0]}</option>
+      {options.slice(1, options.length).map((item) => (
         <option value={item} key={item}>
           {item}
         </option>

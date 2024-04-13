@@ -33,8 +33,8 @@ const ListOfCharacters: React.FC = () => {
     queryFn: () => getCharacters(page, query, gender, status),
   });
 
-  const statuses = ["Alive", "Dead", "Unknown"];
-  const genders = ["Male", "Female", "Genderless ", "Unknown"];
+  const statuses = ["All statuses", "Alive", "Dead", "Unknown"];
+  const genders = ["All genders", "Male", "Female", "Genderless ", "Unknown"];
 
   const handleClickNextButton = () => {
     setPage((prev) => prev + 1);

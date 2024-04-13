@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ram-frontend/static/css/main.ae628576.css",
+    "main.js": "/ram-frontend/static/js/main.f57e6214.js",
+    "static/js/453.7148b2da.chunk.js": "/ram-frontend/static/js/453.7148b2da.chunk.js",
+    "static/media/description.png": "/ram-frontend/static/media/description.fc41239bc779bb28fef5.png",
+    "static/media/logo.png": "/ram-frontend/static/media/logo.daac7c36d03463d0ec4c.png",
+    "static/media/rick.png": "/ram-frontend/static/media/rick.68b05a8fe2223cfd6a9d.png",
+    "static/media/morty.png": "/ram-frontend/static/media/morty.3899aca1fa1bc303dba2.png",
+    "static/media/github-icon.svg": "/ram-frontend/static/media/github-icon.dbf6dbcfc5a297de032f21815211e92c.svg",
+    "static/media/vk-icon.svg": "/ram-frontend/static/media/vk-icon.c35aa6bd75c7dd30d985a07fdb3937d4.svg",
+    "static/media/linkenin-icon.svg": "/ram-frontend/static/media/linkenin-icon.b14e38eedfdc4abf8d0c5c608a5e70c8.svg",
+    "index.html": "/ram-frontend/index.html",
+    "main.ae628576.css.map": "/ram-frontend/static/css/main.ae628576.css.map",
+    "main.f57e6214.js.map": "/ram-frontend/static/js/main.f57e6214.js.map",
+    "453.7148b2da.chunk.js.map": "/ram-frontend/static/js/453.7148b2da.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae628576.css",
+    "static/js/main.f57e6214.js"
+  ]
+}

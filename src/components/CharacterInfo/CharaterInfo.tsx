@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -24,14 +24,16 @@ const CharaterInfo: React.FC = () => {
   });
 
   useEffect(() => {
-    if(!!data?.data?.episode) {
+    if (!!data?.data?.episode) {
       console.log(111);
-      
+
       setEpisodes(
-        data?.data?.episode?.map((episode) => episode.split('/').pop()).join(',')
-      )
+        data?.data?.episode
+          ?.map((episode) => episode.split("/").pop())
+          .join(",")
+      );
     }
-  }, [data])
+  }, [data]);
 
   return (
     <div className={styles.container}>
@@ -52,11 +54,19 @@ const CharaterInfo: React.FC = () => {
           </div>
           <div>
             <span className={styles.field}>Origin: </span>
-            {data?.data.origin.name}
+            {data?.data.origin.name === "unknown" ? (
+              <span>{data?.data.origin.name}</span>
+            ) : (
+              <Link to={`/location/${data?.data.origin.url.split("/").pop()}`}>
+                <span className={styles.link}>{data?.data.origin.name}</span>
+              </Link>
+            )}
           </div>
           <div>
             <span className={styles.field}>Location: </span>
-            {data?.data.location.name}
+            <Link to={`/location/${data?.data.location.url.split("/").pop()}`}>
+              <span className={styles.link}>{data?.data.location.name}</span>
+            </Link>
           </div>
         </div>
         <img className={styles.avatar} src={data?.data.image} />

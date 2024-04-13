@@ -22,7 +22,6 @@ const LocationInfo: React.FC = () => {
 
   console.log(id);
   
-
   useEffect(() => {
     if (!!data?.residents.length) {
       const residents = data.residents

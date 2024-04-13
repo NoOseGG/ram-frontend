@@ -36,14 +36,6 @@ const ListOfCharacters: React.FC = () => {
   const statuses = ["All statuses", "Alive", "Dead", "Unknown"];
   const genders = ["All genders", "Male", "Female", "Genderless ", "Unknown"];
 
-  const handleClickNextButton = () => {
-    setPage((prev) => prev + 1);
-  };
-
-  const handleClickPreviousButton = () => {
-    setPage((prev) => prev - 1);
-  };
-
   const handleChangeSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setPage(1);
     setQuery(event.target.value);
@@ -99,8 +91,8 @@ const ListOfCharacters: React.FC = () => {
           <ButtonNavigate
             isPrev={data?.data.info.prev}
             isNext={data?.data.info.next}
-            handleClickPreviousButton={handleClickPreviousButton}
-            handleClickNextButton={handleClickNextButton}
+            handleClickPreviousButton={() => setPage(prev => prev - 1)}
+            handleClickNextButton={() => setPage(prev => prev + 1)}
             handleClickMoreButton={handleClickHideMore}
           />
         </>

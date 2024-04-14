@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import styles from "./LocationInfo.module.scss";
-import { ILocation, ILocationsResponse } from "../../interfaces/app.interface";
+import { ILocation } from "../../interfaces/app.interface";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";

@@ -1,19 +1,26 @@
-import React from 'react'
+import React from "react";
 
-import styles from './EpisodeItem.module.scss';
-import { IEpisode } from '../../../../interfaces/app.interface';
+import styles from "./EpisodeItem.module.scss";
+import { IEpisode } from "../../../../interfaces/app.interface";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
-    episode: IEpisode;
-}
+  episode: IEpisode;
+};
 
 const EpisodeItem: React.FC<Props> = ({ episode }) => {
-    return (
-        <div className={styles.container}>
-            <div>{episode.name}</div>
-            <div>{episode.episode}</div>
-        </div>
-    )
-}
+  const navigate = useNavigate();
 
-export { EpisodeItem }
+  const handleClick = () => {
+    navigate(`/episode/${episode.id}`);
+  };
+
+  return (
+    <div className={styles.container} onClick={handleClick}>
+      <div>{episode.name}</div>
+      <div>{episode.episode}</div>
+    </div>
+  );
+};
+
+export { EpisodeItem };

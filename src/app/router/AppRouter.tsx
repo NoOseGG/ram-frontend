@@ -8,6 +8,8 @@ import { Landing } from "../../landing/Landing";
 import { LocationInfo } from "../../components/LocationInfo/LocationInfo";
 import { ListOfCharacters } from "../../components/ListOfCharacters/ListOfCharacters";
 import { ListOfLocations } from "../../components/ListOfLocations/ListOfLocations";
+import { ListOfEpisodes } from "../../components/ListOfEpisodes/ListOfEpisodes";
+import { EpisodeInfo } from "../../components/EpisodeInfo/EpisodeInfo";
 
 const UrlRoutes = {
   HOME: "/",
@@ -15,6 +17,8 @@ const UrlRoutes = {
   CHARACTER_INFO: "character/:id",
   LOCATIONS: "/location",
   LOCATION_INFO: "location/:id",
+  EPISODES: "/episode",
+  EPISODE_INFO: "/episode/:id",
 };
 
 const AppRouter: React.FC = () => {
@@ -42,6 +46,14 @@ const AppRouter: React.FC = () => {
           <Route
             path={UrlRoutes.LOCATION_INFO}
             element={landing(<LocationInfo />)}
+          />
+          <Route
+            path={UrlRoutes.EPISODES}
+            element={landing(<ListOfEpisodes />)}
+          />
+          <Route
+            path={UrlRoutes.EPISODE_INFO}
+            element={landing(<EpisodeInfo />)}
           />
         </Route>
       </Routes>

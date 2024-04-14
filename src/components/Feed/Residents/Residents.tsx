@@ -1,9 +1,10 @@
 import React from "react";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 import styles from "./Residents.module.scss";
-import axios from "axios";
-import { ICharacter, ICharacterInfo } from "../../../interfaces/app.interface";
-import { useQuery } from "@tanstack/react-query";
+
+import { ICharacter } from "../../../interfaces/app.interface";
 import CharacterItem from "../Characters/CharacterItem/CharacterItem";
 
 const getResidents = (residents: string) => {
@@ -31,7 +32,7 @@ const Residents: React.FC<Props> = ({ residents }) => {
       <div className={styles.title}>Residents</div>
       <div className={styles.residentsContainer}>
         {data?.map((resident) => (
-          <CharacterItem character={resident} key={resident.id}/>
+          <CharacterItem character={resident} key={resident.id} />
         ))}
       </div>
     </div>

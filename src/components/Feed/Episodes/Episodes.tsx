@@ -4,14 +4,19 @@ import { useQuery } from "@tanstack/react-query";
 
 import styles from "./Episodes.module.scss";
 
-import { IEpisode, IEpisodesResponse } from "../../../interfaces/app.interface";
+import { IEpisode } from "../../../interfaces/app.interface";
 import { EpisodeItem } from "./EpisodeItem/EpisodeItem";
-import { log } from "console";
+import { useNavigate } from "react-router-dom";
 
-const getEpisodes = async (episodes: string) => {
-  return axios.get<IEpisode[]>(
-    `https://rickandmortyapi.com/api/episode/${episodes}`
-  );
+const getEpisodes = async (episodes: string | undefined) => {
+  if (!!episodes)
+    return axios.get<IEpisode[]>(
+      `https://rickandmortyapi.com/api/episode/${episodes}`
+    );
+  else
+    return axios.get<IEpisode[]>(
+      `https://rickandmortyapi.com/api/episode/1,2,3,4`
+    );
 };
 
 const getEpisode = async (episode: string) => {
@@ -21,10 +26,11 @@ const getEpisode = async (episode: string) => {
 };
 
 type Props = {
-  episodes: string;
+  episodes?: string;
 };
 
 const Episodes: React.FC<Props> = ({ episodes }) => {
+  const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const { data, isLoading } = useQuery({
     queryKey: ["episodes", episodes],
@@ -35,6 +41,10 @@ const Episodes: React.FC<Props> = ({ episodes }) => {
     },
   });
 
+  const handleClickShowMore = () => {
+    navigate("/episode/");
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>Episodes</div>
@@ -43,6 +53,16 @@ const Episodes: React.FC<Props> = ({ episodes }) => {
           <EpisodeItem episode={episode} key={episode.id} />
         ))}
       </div>
+      {!episodes && (
+        <div className={styles.buttonContainer}>
+          <button
+            className={styles.buttonShowMore}
+            onClick={handleClickShowMore}
+          >
+            Show more
+          </button>
+        </div>
+      )}
     </div>
   );
 };

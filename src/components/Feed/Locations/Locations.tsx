@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 import styles from ".//Locations.module.scss";
 
 import { ILocationsResponse } from "../../../interfaces/app.interface";
 import { LocationItem } from "./LocationItem/LocationItem";
-import sessionStorageService from "../../../services/sessionStorage.service";
-import ButtonNavigate from "../ButtonsNavigate/ButtonNavigate";
-import { useNavigate } from "react-router-dom";
 
 const getLocations = async () => {
   return axios.get<ILocationsResponse>(

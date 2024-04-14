@@ -5,6 +5,7 @@ import styles from "./Feed.module.scss";
 import { Description } from "./Description/Description";
 import { Locations } from "./Locations/Locations";
 import { Characters } from "./Characters/Characters";
+import { Episodes } from "./Episodes/Episodes";
 
 const Feed: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const Feed: React.FC = () => {
       <Description />
       <Characters />
       <Locations />
+      <Episodes />
     </div>
   );
 };

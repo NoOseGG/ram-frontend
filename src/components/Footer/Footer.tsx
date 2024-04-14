@@ -11,7 +11,11 @@ const Footer: React.FC = () => {
     <footer className={styles.container}>
       <div className={styles.innerContainer}>
         <span className={styles.text}>
-          <a className={styles.link} href="https://rickandmortyapi.com/" target="_blank">
+          <a
+            className={styles.link}
+            href="https://rickandmortyapi.com/"
+            target="_blank"
+          >
             Rick and Morty API
           </a>
         </span>

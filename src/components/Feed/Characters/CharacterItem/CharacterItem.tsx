@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./CharacterItem.module.scss";
 
 import { ICharacter } from "../../../../interfaces/app.interface";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AliveBudge } from "../../AliveBudge/AliveBudge";
 
 type CharacterItemProps = {
@@ -26,7 +26,7 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ character }) => {
 
   return (
     <Link className={styles.link} to={`/character/${character.id}`} replace>
-      <div className={styles.container} >
+      <div className={styles.container}>
         <img className={styles.avatar} src={character.image} alt="Аватар" />
         <div className={styles.textContainer}>
           <div style={{ display: "flex", alignItems: "center", gap: 5 }}>

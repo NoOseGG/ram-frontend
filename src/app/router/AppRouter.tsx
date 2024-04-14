@@ -6,11 +6,15 @@ import { Header } from "../../components/Header/Header";
 import CharaterInfo from "../../components/CharacterInfo/CharaterInfo";
 import { Landing } from "../../landing/Landing";
 import { LocationInfo } from "../../components/LocationInfo/LocationInfo";
+import { ListOfCharacters } from "../../components/ListOfCharacters/ListOfCharacters";
+import { ListOfLocations } from "../../components/ListOfLocations/ListOfLocations";
 
 const UrlRoutes = {
   HOME: "/",
-  CHARACTER: "character/:id",
-  LOCATION: "location/:id",
+  CHARACTERS: "/character",
+  CHARACTER_INFO: "character/:id",
+  LOCATIONS: "/location",
+  LOCATION_INFO: "location/:id",
 };
 
 const AppRouter: React.FC = () => {
@@ -24,11 +28,19 @@ const AppRouter: React.FC = () => {
         <Route path={UrlRoutes.HOME}>
           <Route index element={landing(<FeedPage />)} />
           <Route
-            path={UrlRoutes.CHARACTER}
+            path={UrlRoutes.CHARACTERS}
+            element={landing(<ListOfCharacters />)}
+          />
+          <Route
+            path={UrlRoutes.CHARACTER_INFO}
             element={landing(<CharaterInfo />)}
           />
           <Route
-            path={UrlRoutes.LOCATION}
+            path={UrlRoutes.LOCATIONS}
+            element={landing(<ListOfLocations />)}
+          />
+          <Route
+            path={UrlRoutes.LOCATION_INFO}
             element={landing(<LocationInfo />)}
           />
         </Route>

@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .buttonNavigate {
@@ -33,4 +34,8 @@
     border: 1px solid yellow;
     color: yellow;
   }
+}
+
+.info {
+  font-size: 22px;
 }

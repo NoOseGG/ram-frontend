@@ -8,77 +8,44 @@ import { ILocationsResponse } from "../../../interfaces/app.interface";
 import { LocationItem } from "./LocationItem/LocationItem";
 import sessionStorageService from "../../../services/sessionStorage.service";
 import ButtonNavigate from "../ButtonsNavigate/ButtonNavigate";
+import { useNavigate } from "react-router-dom";
 
-const getLocations = async (page: number) => {
+const getLocations = async () => {
   return axios.get<ILocationsResponse>(
-    `https://rickandmortyapi.com/api/location/?page=${page}`
+    `https://rickandmortyapi.com/api/location/`
   );
 };
 
 const Locations: React.FC = () => {
-  const [page, setPage] = useState(1);
-  const [isShowMore, setIsShowMore] = useState(sessionStorageService.getItemLocationShowMore());
+  const navigate = useNavigate();
   const { data, isLoading } = useQuery({
-    queryKey: ["locations", page],
-    queryFn: () => getLocations(page),
+    queryKey: ["locations"],
+    queryFn: () => getLocations(),
     select: ({ data }) => data,
   });
 
   const handleClickShowMore = () => {
-    sessionStorageService.setItemLocationShowMore();
-    setIsShowMore("true");
-  };
-
-  const handleClickHideMore = () => {
-    sessionStorageService.removeItemLocationShowMore();
-    setIsShowMore(null);
-  };
-
-  const handleClickNextButton = () => {
-    setPage((prev) => prev + 1);
-  };
-
-  const handleClickPreviousButton = () => {
-    setPage((prev) => prev - 1);
+    navigate("/location/");
   };
 
   return (
     <div className={styles.container}>
-      {isShowMore ? (
-        <>
-          <h2 className={styles.title}>Locations</h2>
-          <div className={styles.locationContainer}>
-            {data?.results.map((location) => (
-              <LocationItem location={location} key={location.id} />
-            ))}
-          </div>
-          <ButtonNavigate
-            isPrev={data?.info.prev}
-            isNext={data?.info.next}
-            handleClickPreviousButton={handleClickPreviousButton}
-            handleClickNextButton={handleClickNextButton}
-            handleClickMoreButton={handleClickHideMore}
-          />
-
-        </>
-      ) : (
-        <>
-          <h2 className={styles.title}>Locations</h2>
-          <div className={styles.locationContainer}>
-            {data?.results.slice(0, 8).map((location, index) => (
-              <LocationItem location={location} key={location.id} />
-            ))}
-          </div>
-          <div className={styles.buttonContainer}>
-            <button
-              className={styles.buttonShowMore}
-              onClick={handleClickShowMore}
-            >
-              Show more
-            </button>
-          </div>
-        </>
-      )}
+      <>
+        <h2 className={styles.title}>Locations</h2>
+        <div className={styles.locationContainer}>
+          {data?.results.slice(0, 8).map((location, index) => (
+            <LocationItem location={location} key={location.id} />
+          ))}
+        </div>
+        <div className={styles.buttonContainer}>
+          <button
+            className={styles.buttonShowMore}
+            onClick={handleClickShowMore}
+          >
+            Show more
+          </button>
+        </div>
+      </>
     </div>
   );
 };

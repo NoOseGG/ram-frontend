@@ -7,7 +7,7 @@ type Props = {
   isNext: string | null | undefined;
   handleClickPreviousButton: () => void;
   handleClickNextButton: () => void;
-  handleClickMoreButton: () => void;
+  showing: string;
 };
 
 const ButtonNavigate: React.FC<Props> = ({
@@ -15,7 +15,7 @@ const ButtonNavigate: React.FC<Props> = ({
   isNext,
   handleClickPreviousButton,
   handleClickNextButton,
-  handleClickMoreButton,
+  showing,
 }) => {
   return (
     <div className={styles.container}>
@@ -29,9 +29,7 @@ const ButtonNavigate: React.FC<Props> = ({
       ) : (
         <div style={{ width: 200 }}></div>
       )}
-      <button className={styles.buttonShowMore} onClick={handleClickMoreButton}>
-        Hide more
-      </button>
+      <span className={styles.info}>{showing}</span>
       {isNext ? (
         <button
           className={styles.buttonNavigate}

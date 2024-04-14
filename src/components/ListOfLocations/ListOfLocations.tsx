@@ -45,42 +45,23 @@ const ListOfLocations: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      {isShowMore ? (
-        <>
-          <h2 className={styles.title}>Locations</h2>
-          <div className={styles.locationContainer}>
-            {data?.results.map((location) => (
-              <LocationItem location={location} key={location.id} />
-            ))}
-          </div>
-          <ButtonNavigate
-            isPrev={data?.info.prev}
-            isNext={data?.info.next}
-            handleClickPreviousButton={handleClickPreviousButton}
-            handleClickNextButton={handleClickNextButton}
-            showing={`Showing ${data?.results[0].id} to ${
-              data?.results[data.results.length - 1].id
-            } of ${data?.info.count} results`}
-          />
-        </>
-      ) : (
-        <>
-          <h2 className={styles.title}>Locations</h2>
-          <div className={styles.locationContainer}>
-            {data?.results.slice(0, 8).map((location, index) => (
-              <LocationItem location={location} key={location.id} />
-            ))}
-          </div>
-          <div className={styles.buttonContainer}>
-            <button
-              className={styles.buttonShowMore}
-              onClick={handleClickShowMore}
-            >
-              Show more
-            </button>
-          </div>
-        </>
-      )}
+      <>
+        <h2 className={styles.title}>Locations</h2>
+        <div className={styles.locationContainer}>
+          {data?.results.map((location) => (
+            <LocationItem location={location} key={location.id} />
+          ))}
+        </div>
+        <ButtonNavigate
+          isPrev={data?.info.prev}
+          isNext={data?.info.next}
+          handleClickPreviousButton={handleClickPreviousButton}
+          handleClickNextButton={handleClickNextButton}
+          showing={`Showing ${data?.results[0].id} to ${
+            data?.results[data.results.length - 1].id
+          } of ${data?.info.count} results`}
+        />
+      </>
     </div>
   );
 };

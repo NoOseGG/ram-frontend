@@ -20,6 +20,10 @@ const Header: React.FC = () => {
     navigate("/location/");
   };
 
+  const handleClickEpisodes = () => {
+    navigate("/episode/");
+  };
+
   return (
     <header className={styles.container}>
       <div className={styles.innerContainer}>
@@ -36,6 +40,9 @@ const Header: React.FC = () => {
             </li>
             <li className={styles.menuItem} onClick={handleClickLocations}>
               Locations
+            </li>
+            <li className={styles.menuItem} onClick={handleClickEpisodes}>
+              Episodes
             </li>
           </ul>
         </nav>

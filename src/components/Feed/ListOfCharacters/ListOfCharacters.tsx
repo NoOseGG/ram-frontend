@@ -4,8 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 
 import styles from "./ListOfCharacters.module.scss";
 
-import CharacterItem from "../CharacterItem/CharacterItem";
-import { ICharactersResponse } from "../../../types/app.interface";
+import CharacterItem from "./CharacterItem/CharacterItem";
+import { ICharactersResponse } from "../../../interfaces/app.interface";
 
 const getCharacters = async (page: number, name: string, gender: string) => {
   return axios.get<ICharactersResponse>(

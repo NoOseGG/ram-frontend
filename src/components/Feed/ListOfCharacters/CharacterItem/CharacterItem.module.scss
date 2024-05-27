@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    &:hover {
+        color: red;
+    }
+}
+
+.avatar {
+    width: 300px;
+    border-radius: 12px;
+}
+
+.textContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.text {
+    font-size: 16px;
+    padding-right: 5px;
+}

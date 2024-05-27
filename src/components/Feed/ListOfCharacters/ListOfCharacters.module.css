@@ -1,0 +1,37 @@
+.container {
+  width: auto;
+  margin-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.characters-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-navigate {
+  border: 1px solid #fff;
+  font-size: 20px;
+  border-radius: 18px;
+  color: white;
+  background-color: #000;
+  margin-bottom: 50px;
+  padding: 30px;
+}
+
+.button-navigate:hover {
+  cursor: pointer;
+  color: yellow;
+  border: 1px solid yellow;
+}

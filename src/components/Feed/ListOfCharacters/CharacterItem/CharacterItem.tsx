@@ -5,7 +5,6 @@ import styles from "./CharacterItem.module.scss";
 import { ICharacter } from "../../../../interfaces/app.interface";
 import { useNavigate } from "react-router-dom";
 import { AliveBudge } from "../../AliveBudge/AliveBudge";
-import { stat } from "fs";
 
 type CharacterItemProps = {
   character: ICharacter;

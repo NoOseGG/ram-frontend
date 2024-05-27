@@ -7,7 +7,6 @@ import styles from "./Characters.module.scss";
 import CharacterItem from "./CharacterItem/CharacterItem";
 import { ICharactersResponse } from "../../../interfaces/app.interface";
 import sessionStorageService from "../../../services/sessionStorage.service";
-import { log } from "console";
 
 const getCharacters = async (page: number, name: string, gender: string) => {
   return axios.get<ICharactersResponse>(
